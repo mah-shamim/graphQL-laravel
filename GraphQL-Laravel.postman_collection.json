@@ -94,10 +94,30 @@
 		},
 		{
 			"name": "Fetch All Posts With User Relation",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": null
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\n    users{\n        id \n        name\n        posts {\n            title\n        }\n    }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"graphql"
+					]
+				}
 			},
 			"response": []
 		},
